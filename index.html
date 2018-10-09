@@ -33,35 +33,56 @@
 
   <div>
 
-     <!-- Below is the html that displays on the broser the words: 'Number to Guess' with a header size of three. It also includes a span so that the java script has a placement of where to put the information used in .text This span is further classified as an id. The id is named 'numberToGuess'-->
+     <!-- Below is the html that displays on the broser the words: 'Number to Guess' with a header size of three. It also includes a span so that the java script has a placement of where to put the information used in: .text This span is further classified as an id. The id is named 'numberToGuess'-->
 
     <h3>
       Number To Guess:
       <span id="numberToGuess"></span>
     </h3>
 
+    <!-- Below is the html that displays on the broser the word: 'Total' with a header size of three. It also includes a span so that the java script has a placement of where to put the information used in: .text This span is NOT further classified-->
 
     <h3>
       Total:
       <span id="total"></span>
     </h3>
+
+      <!-- Below is the html that displays on the broser the word: 'Wins' with a header size of three. It also includes a span so that the java script has a placement of where to put the information used in: .text This span is NOT further classified-->
+    
     <h3>
       Wins:
       <span id="wins"></span>
     </h3>
+
+      <!-- Below is the html that displays on the broser the word: 'Losses' with a header size of three. It also includes a span so that the java script has a placement of where to put the information used in: .text This span is NOT further classified-->
+
     <h3>
       Losses:
       <span id="losses"></span>
     </h3>
+
+    <!-- Below is the html that displays on the broser the button and the text that labels each button. Each button is has a class name of "crystal" and shows the text of Ruby, Sapphire, Opal, Diamond on the corresponding button. It does NOT style the button. That was done above in the CSS style under: .crystal  -->
+
+
     <button class="crystal">Ruby</button>
     <button class="crystal">Sapphire</button>
     <button class="crystal">Opal</button>
     <button class="crystal">Diamond</button>
+
   </div>
 ​
+
+<!-- Below is the jquery cdn link from online. This allows the javascript file to communicate wiht built in jquery code.  -->
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+
+   <!-- Below is where the javascript code starts -->
+
   <script>
+
+    // Below is the code for a random number to be generated. In this specific situaiton we chose for the number to fall between 1-100. We are also declaring a new variable and chosing it to be called 'randomNUmber'
+
     var randomNumber = Math.floor(Math.random() * 100) + 1;
     var total = 0;
     var wins = 0;
