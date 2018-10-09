@@ -84,11 +84,27 @@
     // Below is the code for a random number to be generated. In this specific situaiton we chose for the number to fall between 1-100. We are also declaring a new variable and chosing it to be called 'randomNUmber'
 
     var randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    // Below we are declaring a new variable, calling that variable by the name 'total' and setting it's starting value to zero //
+
     var total = 0;
+
+    // Below we are declaring a new variable, calling that variable by the name 'wins' and setting it's starting value to zero //
+
     var wins = 0;
+
+// Below we are declaring a new variable, calling that variable by the name 'losses' and setting it's starting value to zero //
+
     var losses = 0;
 ​
+//Below starts our JQuery. The $ symbol does: ???
+
+//Below starts our JQuery. The $ symbol lets us say that we want our JavaScript to communicate with our html. It tells the computer where to put the variable 'randomNumber' on the broser in text form. It also further communicates to the computer that the location for this specific variale 'randomNumber' used at this time will be in the open span part of the text 'Number to Guess' (see span explanation above)
+
+
     $("#numberToGuess").text(randomNumber);
+
+    
     $("#total").text(total);
     $("#wins").text(wins);
     $("#losses").text(losses);
