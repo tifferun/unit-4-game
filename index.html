@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crystal Game</title>
+  <style>
+
+/* Below is the css style of the crystal buttons. This is basically in-line CSS  */
+    .crystal {
+      height: 30px;
+      width: 75px;
+      background: #333;
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+    /* }
+​Below is the css style that give the size of 30 pixels to the words: 'Number To Guess' */
+
+    #numberToGuess {
+      font-size: 30px;
+    }
+  </style>
+
+</head>
+​
+<body>
+    <!-- Below is the html that displays on the broser the words: 'Crystal Collector' with a header size of one  -->
+
+  <h1>Crystal Collector</h1>
+
+  <div>
+
+     <!-- Below is the html that displays on the broser the words: 'Number to Guess' with a header size of three. It also includes a span so that the java script has a placement of where to put the information used in .text This span is further classified as an id. The id is named 'numberToGuess'-->
+
+    <h3>
+      Number To Guess:
+      <span id="numberToGuess"></span>
+    </h3>
+
+
+    <h3>
+      Total:
+      <span id="total"></span>
+    </h3>
+    <h3>
+      Wins:
+      <span id="wins"></span>
+    </h3>
+    <h3>
+      Losses:
+      <span id="losses"></span>
+    </h3>
+    <button class="crystal">Ruby</button>
+    <button class="crystal">Sapphire</button>
+    <button class="crystal">Opal</button>
+    <button class="crystal">Diamond</button>
+  </div>
+​
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
+    var total = 0;
+    var wins = 0;
+    var losses = 0;
+​
+    $("#numberToGuess").text(randomNumber);
+    $("#total").text(total);
+    $("#wins").text(wins);
+    $("#losses").text(losses);
+​
+    $(".crystal").each(function () {
+      var random = Math.floor(Math.random() * 10) + 1;
+      $(this).attr("value", random);
+    });
+​
+    $(".crystal").on("click", function () {
+      var value = parseInt(this.value);
+      total = total + value;
+      $("#total").text(total);
+​
+      if (total === randomNumber) {
+        console.log("Hey you won!");
+        wins++;
+        $("#wins").text(wins);
+        resetGame();
+      } else if (total > randomNumber) {
+        console.log("You lose!");
+        losses++;
+        $("#losses").text(losses);
+        resetGame();
+      }
+    });
+​
+    function resetGame() {
+      randomNumber = Math.floor(Math.random() * 100) + 1;
+      total = 0;
+​
+      $("#numberToGuess").text(randomNumber);
+      $("#total").text(total);
+      
+      $(".crystal").each(function () {
+        var random = Math.floor(Math.random() * 10) + 1;
+        $(this).attr("value", random);
+      });
+    }
+​
+  </script>
+</body>
+​
+</html>
