@@ -97,25 +97,28 @@
 
     var losses = 0;
 
-//Below starts our JQuery. The $ symbol does://
+//Below starts our JQuery. The $ symbol does?://
 
-//Below starts our JQuery. The $ symbol lets us say that we want our JavaScript to communicate with our html. It tells the computer where to put the variable 'randomNumber' on the broser in text form. It also further communicates to the computer that the location for this specific variale 'randomNumber' used at this time will be in the open span part of the text 'Number to Guess' (see span explanation above)//
+//Below starts our JQuery. The $ symbol lets us say that we want our JavaScript to communicate with our html. It tells the computer where to put the variable 'randomNumber' on the broser in text form. It also further communicates to the computer that the location for this specific variale 'randomNumber' used at this time will be in the open span part of the text by the Id 'NumbertoGuess' (see span explanation above)//
 
 
     $("#numberToGuess").text(randomNumber);
 
 
+// same concept as above just a different ID//
 
     $("#total").text(total);
     $("#wins").text(wins);
     $("#losses").text(losses);
 
-// MAKE SURE TO RESEARCH AND THEN EXPLAIN THIS PART OF THE CODE... SEE NOTES //
+// Below says the $ says locate the class 'crystal'. For example the $(".crystal") will grab the entire array of anything classified with the class of 'crystal'. The '.each' is a jQuery method that says for everything we selected prior we are going to run the following function to it. The next part shows the function of random number generator. For the class of 'crysatl' we are going to run the function on each part of the array of 'crystal' to get an auto generated random number between 1-10. After the number is generated the '$(this).attr("value", random);' "This' changes the value of the button selected. It also does not show that value visually on the broser for the user to see. //
 
     $(".crystal").each(function () {
       var random = Math.floor(Math.random() * 10) + 1;
       $(this).attr("value", random);
     });
+
+// Below says when the user clicks on the 'crystal' the current value of the crystal will be added to the total and increase that value of the total by the amount of the 'crystal' selected. Also ' $("#total").text(total);' is what updates the 'total' on the broser screen//  
 
     $(".crystal").on("click", function () {
       var value = parseInt(this.value);
