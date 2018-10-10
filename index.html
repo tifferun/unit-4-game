@@ -96,29 +96,31 @@
 // Below we are declaring a new variable, calling that variable by the name 'losses' and setting it's starting value to zero //
 
     var losses = 0;
-​
-//Below starts our JQuery. The $ symbol does: ???
 
-//Below starts our JQuery. The $ symbol lets us say that we want our JavaScript to communicate with our html. It tells the computer where to put the variable 'randomNumber' on the broser in text form. It also further communicates to the computer that the location for this specific variale 'randomNumber' used at this time will be in the open span part of the text 'Number to Guess' (see span explanation above)
+//Below starts our JQuery. The $ symbol does://
+
+//Below starts our JQuery. The $ symbol lets us say that we want our JavaScript to communicate with our html. It tells the computer where to put the variable 'randomNumber' on the broser in text form. It also further communicates to the computer that the location for this specific variale 'randomNumber' used at this time will be in the open span part of the text 'Number to Guess' (see span explanation above)//
 
 
     $("#numberToGuess").text(randomNumber);
 
-    
+
+
     $("#total").text(total);
     $("#wins").text(wins);
     $("#losses").text(losses);
-​
+
+
     $(".crystal").each(function () {
       var random = Math.floor(Math.random() * 10) + 1;
       $(this).attr("value", random);
     });
-​
+
     $(".crystal").on("click", function () {
       var value = parseInt(this.value);
       total = total + value;
       $("#total").text(total);
-​
+
       if (total === randomNumber) {
         console.log("Hey you won!");
         wins++;
@@ -131,11 +133,12 @@
         resetGame();
       }
     });
-​
+
+// Below we are using the funciton 'resetGame' to 
     function resetGame() {
       randomNumber = Math.floor(Math.random() * 100) + 1;
       total = 0;
-​
+
       $("#numberToGuess").text(randomNumber);
       $("#total").text(total);
       
@@ -144,7 +147,7 @@
         $(this).attr("value", random);
       });
     }
-​
+    
   </script>
 </body>
 ​
