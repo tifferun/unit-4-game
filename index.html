@@ -110,6 +110,7 @@
     $("#wins").text(wins);
     $("#losses").text(losses);
 
+// MAKE SURE TO RESEARCH AND THEN EXPLAIN THIS PART OF THE CODE... SEE NOTES //
 
     $(".crystal").each(function () {
       var random = Math.floor(Math.random() * 10) + 1;
@@ -121,11 +122,17 @@
       total = total + value;
       $("#total").text(total);
 
+// Below is an if statement. It says 'if' the players 'total' is equal to the 'randomNumber' that was previously generarted the value of the variable 'wins'will go up by one point. The game will then reset.//
+
       if (total === randomNumber) {
         console.log("Hey you won!");
         wins++;
         $("#wins").text(wins);
         resetGame();
+
+// Below is an else if statement. It gives the conditions of what the computer should do if the 'total' does not match the 'randomNumber'. If the total does not match the player losses and the 'losses variable' will go up by one point. The game will then reset. *** Need to futher clarify that this is function inside a function?? Is that correct??  //
+
+
       } else if (total > randomNumber) {
         console.log("You lose!");
         losses++;
@@ -134,12 +141,19 @@
       }
     });
 
-// Below we are using the funciton 'resetGame' to 
+// Below we are using the funciton 'resetGame' so that when a player wins or losses the game is reset and the 'Number to Guess' is again auto generated. So the 'randomNumber' has the auto generated formula to pick a number between 1-100 // 
+
+
     function resetGame() {
       randomNumber = Math.floor(Math.random() * 100) + 1;
       total = 0;
 
+
+// Below is saying that the 'randomNumber' generarted should show up in the html in the span area next to 'Number to Guess' it gives the placement of the auto generated number a place visually on the broser. With-out this the number would not show. ????? Actually I do not understand what lines 154-162 do. I even notated them out and the program still ran correctly. What is their purpose again? // 
+
       $("#numberToGuess").text(randomNumber);
+
+
       $("#total").text(total);
       
       $(".crystal").each(function () {
@@ -147,7 +161,7 @@
         $(this).attr("value", random);
       });
     }
-    
+
   </script>
 </body>
 ​
